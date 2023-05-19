@@ -1,0 +1,8 @@
+Begin
+
+
+#####chapter10####generic
+1、struct<T>
+2、enum<T>
+3、method: impl<T>
+4、function: fn name<T>
