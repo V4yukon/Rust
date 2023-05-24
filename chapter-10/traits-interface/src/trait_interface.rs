@@ -43,3 +43,25 @@ pub fn notify(item: impl Summary) {
 //pub fn notify(item1: & impl Summary, item2: &impl Summary)
 //
 //trait as parameter as generic as return type
+use std::fmt::Display;
+
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl <T> Pair<T> {
+    fn new(x: T, y: T) ->Self{
+        Self {x, y}
+    }
+}
+
+impl <T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x = {}", self.x);
+        }else{
+            println!("The largest member is y = {}", self.y);
+        }
+    }
+}
