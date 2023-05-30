@@ -52,10 +52,6 @@ mod tests {
         Guess::new(200);
     }
 
-
-
-
-
     //
     //using Result<T, E> in test
     #[test]
@@ -66,10 +62,18 @@ mod tests {
             Err(String::from("two plus two does not equal four"))
         }
     }
-
-
-
     
+    #[test]
+    fn this_test_will_pass() {
+        let value = print_and_return10(10);
+        assert_eq!(10, value);
+    }
+    #[test]
+    #[ignore]
+    fn this_test_will_fail() {
+        let value = print_and_return10(5);
+        assert_eq!(5, value);
+    }
 }
 
 #[derive(Debug)]
@@ -114,6 +118,15 @@ impl Guess {
 
         Guess {value}
     }
+}
+
+/*
+ *show print
+ * */
+
+pub fn print_and_return10(a: i32) -> i32 {
+    println!("print {}", a);
+    10
 }
 
 
