@@ -13,35 +13,56 @@
    
 
 ```
-                                                                                 
+# Cargo Command 
 ```bash
+Rust's package manager
 
-cargo new 
-cagro run 
-cargo check
-cargo test -- 
-cargo build
+USAGE:
+    cargo [OPTIONS] [SUBCOMMAND]
+
+OPTIONS:
+    -V, --version               Print version info and exit
+        --list                  List installed commands
+        --explain <CODE>        Run `rustc --explain CODE`
+    -v, --verbose               Use verbose output (-vv very verbose/build.rs output)
+    -q, --quiet                 Do not print cargo log messages
+        --color <WHEN>          Coloring: auto, always, never
+        --frozen                Require Cargo.lock and cache are up to date
+        --locked                Require Cargo.lock is up to date
+        --offline               Run without accessing the network
+        --config <KEY=VALUE>    Override a configuration value
+    -Z <FLAG>                   Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for
+                                details
+    -h, --help                  Print help information
+
+Some common cargo commands are (see all commands with --list):
+    build, b    Compile the current package
+    check, c    Analyze the current package and report errors, but don't build object files
+    clean       Remove the target directory
+    doc, d      Build this package's and its dependencies' documentation
+    new         Create a new cargo package
+    init        Create a new cargo package in an existing directory
+    add         Add dependencies to a manifest file
+    run, r      Run a binary or example of the local package
+    test, t     Run the tests
+    bench       Run the benchmarks
+    update      Update dependencies listed in Cargo.lock
+    search      Search registry for crates
+    publish     Package and upload this package to the registry
+    install     Install a Rust binary. Default location is $HOME/.cargo/bin
+    uninstall   Uninstall a Rust binary
+
+See 'cargo help <command>' for more information on a specific command.
+
 
 ```
+# Some questions                                                                                
 
-************************************************************************************
-An I/O Project:
-  I have to combine what I've learned concepts in passed several months;
-	Come on!
 
-```rust
+## stack overflow
 
-	std::env::args;
-        //make a Iterator which will produce a series of values, then we  can put them into collections with collect function.
+### ways solved
 
-	std::fs; 
-	// read_to_string, make the contents into string.
-```
-\\
-**********************************************************************************
-********************递归调用产生了栈溢出：stack overflow
-********************
-**********************************************************************************
 1、优化代码，减少递归深度或者函数调用栈深度。尽量使用循环替代递归调用，避免无限递归。
 
 2、增加栈内存大小，可以通过设置环境变量RUST_MIN_STACK来增加栈的大小。例如：
