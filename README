@@ -15,7 +15,13 @@
 |/      |/     \|  )_(  |/     \(_______/  (_______//     \|/     \(_______)_______)
                                                                                     
 ```
-bash
+
+cargo new 
+cagro run 
+cargo check
+cargo test -- 
+cargo build
+
 ```
 cargo run
 
