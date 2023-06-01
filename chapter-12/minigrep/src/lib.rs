@@ -1,0 +1,54 @@
+use std::error::Error;
+use std::fs;
+// extract logic function 
+// extract logic function 
+
+pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
+    let contents = fs::read_to_string(config.file_path)?;
+
+    println!("With text: \n {contents}");
+    
+    Ok(())
+}
+
+pub struct Config {
+    pub query: String,
+    pub file_path: String,
+}
+
+// use method to instead function
+//
+//
+/*impl Config {
+    fn new(args: &[String]) -> Config {
+        let query = args[1].clone();
+        let file_path = args[2].clone();
+        Config{query, file_path}
+    }
+}
+*/
+/*
+ * use Result<T, E> instead of panic! macro
+ * 
+ */
+
+impl Config {
+    pub fn build(args: &[String]) -> Result<Config, &'static str> {
+        if args.len() < 3 {
+            return Err("Parameters not enough")
+        } else {
+            let query = args[1].clone();
+            let file_path = args[2].clone();
+            Ok(Config{ query, file_path})
+        }
+    }
+}
+
+/*
+fn parse_config(args: &[String]) -> Config {
+    let query = args[1].clone();
+    let file_path = args[2].clone();
+
+    Config{ query, file_path}
+}
+*/
