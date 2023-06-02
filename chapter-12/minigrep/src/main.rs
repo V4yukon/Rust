@@ -9,7 +9,7 @@ fn main() {
     //let config = parse_config(&args);
     //
     let config = Config::build(&args).unwrap_or_else(|err| {
-        println!("Program parse arguments: {err}");
+        eprintln!("Program parse arguments: {err}");
         process::exit(1)
     });
 
@@ -17,9 +17,9 @@ fn main() {
 
     //let file_path = &args[2];
 
-    println!("The query is: {}",config.query);
+    //println!("The query is: {}",config.query);
 
-    println!("The search file path is: {}", config.file_path);
+    //println!("The search file path is: {}", config.file_path);
 
     //dbg!(args);
     /*let length = &args.len().to_int();
@@ -40,7 +40,7 @@ fn main() {
 
     //println!("With text:\n {contents}");
     if let Err(e) = minigrep::run(config) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1);
     }
     
