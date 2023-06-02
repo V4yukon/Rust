@@ -104,14 +104,14 @@ IGNORE_CASE=1 cargo run
 
 ## Some steps to refactor command line
 `rgb(9, 105, 218)`
-***
-Split your program into a main.rs and a lib.rs and move your program’s logic to lib.rs.
-As long as your command line parsing logic is small, it can remain in main.rs.
-When the command line parsing logic starts getting complicated, extract it from main.rs and move it to lib.rs.
-***
-***
-Write a test that fails and run it to make sure it fails for the reason you expect.
-Write or modify just enough code to make the new test pass.
-Refactor the code you just added or changed and make sure the tests continue to pass.
-Repeat from step 1!
-***
+**
+**>**Split your program into a main.rs and a lib.rs and move your program’s logic to lib.rs.
+**>**As long as your command line parsing logic is small, it can remain in main.rs.
+**>**When the command line parsing logic starts getting complicated, extract it from main.rs and move it to lib.rs.
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+**>**Write a test that fails and run it to make sure it fails for the reason you expect.
+**>**Write or modify just enough code to make the new test pass.
+**>**Refactor the code you just added or changed and make sure the tests continue to pass.
+**>**Repeat from step 1!
+**
