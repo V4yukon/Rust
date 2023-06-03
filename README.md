@@ -96,7 +96,7 @@ fn recursive_function(n: i32) {
 这里将递归调用的最大深度设置为10000。
 
 
-# I/O operation
+# Chapter-12 I/O operation
 ## some features:
 ```rust
 use std::env::args;
@@ -120,3 +120,32 @@ IGNORE_CASE=1 cargo run
 **>Write or modify just enough code to make the new test pass.**
 **>Refactor the code you just added or changed and make sure the tests continue to pass.**
 **>Repeat from step 1!**
+
+
+
+# chapter-13 Closures and Iterators 
+
+
+1、Closures, a function-like construct you can store in a variable
+2、Iterators, a way of processing a series of elements
+3、How to use closures and iterators to improve the I/O project in Chapter 12
+4、The performance of closures and iterators (Spoiler alert: they’re faster than you might think!)
+
+## Closures: Anonymous function that capture their environment
+move keyword will force the closure have the ownership of parameter.
+capture varible from environment
+|| 
+## Processing a series of Item with Iterator
+
+**trait Iterator**
+```
+iter、into_iter、iter_mut
+
+.next()
+
+.map()
+.filter()
+```
+
+
+
