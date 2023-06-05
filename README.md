@@ -158,3 +158,46 @@ iter、into_iter、iter_mut
 
 
 # Chapter-14 features of cargo 
+
+## Customizing builds with Release Profiles
+```
+add [profile.dev/release] into Cargo.toml file
+eg:
+[profile.dev]
+opt-level = 0
+[profile.release]
+opt-level = 3
+
+```
+## Publishing a crate to crate.io
+```
+login in https://crates.io with github account
+
+cargo login **API key** 
+cargo publish
+cargo yank 
+
+**the publish is permanent,so you should be careful** 
+
+```
+with some metadata like licecse and description  
+use three slashes to write a doc comments 
+```rust
+
+///
+
+//!
+
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+description = "A fun game where you guess what number the computer has chosen."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+
+
+```
+
+
