@@ -212,5 +212,20 @@ Rc<T>, a reference counting type that enables multiple ownership
 Ref<T> and RefMut<T>, accessed through RefCell<T>, a type that enforces the borrowing rules at runtime instead of compile time  
 **
 
+
+**
+Rc<T> enables multiple owners of the same data; Box<T> and RefCell<T> have single owners.  
+Box<T> allows immutable or mutable borrows checked at compile time; Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.  
+Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.  
+**
+
 ## Box<T> point data on the heap
+``
+Box::new();
+```
 ## Deref trait with smart pointer
+
+
+From &T to &U when T: Deref<Target=U>  
+From &mut T to &mut U when T: DerefMut<Target=U>  
+From &mut T to &U when T: Deref<Target=U>  
