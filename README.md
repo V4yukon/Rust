@@ -229,3 +229,13 @@ Box::new();
 From &T to &U when T: Deref<Target=U>  
 From &mut T to &mut U when T: DerefMut<Target=U>  
 From &mut T to &U when T: Deref<Target=U>  
+
+```
+Box<T>
+Rc<T>
+Ref<T>
+
+trait
+Deref
+Drop
+```
