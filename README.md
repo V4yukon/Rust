@@ -256,11 +256,6 @@ When you’re done with the data that the mutex guards, you must unlock the data
 
 
 # Object
-## oops
-**我要回家了**
+##use trait
 
-**快递好重啊，
-书籍都要80kg**
-
-
-**the good thing YOU will get"""**
+# Pattern 
