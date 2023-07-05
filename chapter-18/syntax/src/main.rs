@@ -17,4 +17,11 @@ fn main() {
         1..=5 => println!("one through five"),
         _ => println!("something else"),
     }
+
+    let l = 1;
+    match l {
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("everything"),
+    }
 }
