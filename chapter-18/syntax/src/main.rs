@@ -24,4 +24,14 @@ fn main() {
         3 => println!("three"),
         _ => println!("everything"),
     }
+
+
+    let k = 'c';
+    match k {
+        'a' ..= 'h' => println!("early AscII"),
+        'i' ..= 'z' => println!("hahah,good"),
+        _ => println!("anything else"),
+
+    }
+
 }
