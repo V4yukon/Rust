@@ -13,4 +13,22 @@ fn main() {
         println!("r1 is : {}", *r1);
         println!("r2 is : {}", *r2);
     }
+
+    unsafe fn dangerous() {
+    }
+    /*
+    unsafe {
+        dangerous();
+    }
+    */
+
+    let mut v = vec![1,2,3,4,5,6];
+
+    let m = &mut v[..];
+
+    let (a, b) = m.split_at_mut(3);
+
+    assert_eq!(a, &mut [1, 2, 3]);
+    assert_eq!(b, &mut [4, 5, 6]);
+
 }
