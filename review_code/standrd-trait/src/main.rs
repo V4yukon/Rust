@@ -17,6 +17,8 @@ fn main() {
 
     let stringified = format!("{}", Point::default());
     assert_eq!("(0, 0)", stringified);
+    let min = i32::MIN;
+    println!("this min in i32: {min}");
 }
 
 
