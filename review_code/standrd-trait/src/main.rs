@@ -1,45 +1,43 @@
-//trait
-//
+use std::fmt;
+
 #[derive(Default)]
-#[derive(Debug)]
-struct Color {
-    r: u8,
-    g: u8,
-    b: u8,
+struct Point {
+    x: i32,
+    y: i32,
 }
 
-impl Color {
-    fn new(r: u8, g: u8, b: u8) -> Self {
-        Color {
-            r,
-            g,
-            b,
-        }
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
     }
 }
 
-
-impl Color {
-    fn red(r: u8) -> Self {
-        Color {
-            r,
-            ..Color::default()
-        }
-    }
-    fn green(g: u8) -> Self {
-        Color {
-            g,
-            ..Color::default()
-        }
-    }
-    fn blue(b: u8) -> Self {
-        Color {
-            b,
-            ..Color::default()
-        }
-    }
-}
 fn main() {
-    let a = Color{r: 8, g: 9, b: 10};
-    println!("{:?}", a);
+    println!("origin: {}", Point::default());
+
+    let stringified = format!("{}", Point::default());
+    assert_eq!("(0, 0)", stringified);
+}
+
+
+#[test]
+fn display_point() {
+    let origin = Point::default();
+    assert_eq!(format!("{}", origin), "(0, 0)");
+
+}
+
+#[test]
+fn point_to_string() {
+    let origin = Point::default();
+
+    assert_iq!(origin.to_string(), "(0, 0)");
+
+}
+
+#[test]
+
+fn display_equals_to_string() {
+    let origin = Point::default();
+    assert_eq!(format!("{}", origin), origin.to_string());
 }
